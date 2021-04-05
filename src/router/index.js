@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '@/components/Main'
+import NoSelectedChat from '@/components/NoSelectedChat'
 import ChatPageContent from '@/components/ChatPageContent'
 
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Main',
-      component: Main
+      name: 'NoSelectedChat',
+      component: NoSelectedChat
     },
     {
       path: '/ChatPageContent/:chatId',

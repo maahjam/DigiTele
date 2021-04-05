@@ -9,7 +9,7 @@
                 </div>
             </div>
 
-            <div class="w-full pl-4">
+            <div class="pl-4 flex-shrink details">
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-sm font-medium truncate">
                             {{chatListItem.contact.name}}
@@ -70,8 +70,7 @@ export default {
 .clock{
     font-size: 10px;
 }
-
-.message{
-    
+.details{
+    width: 82%;
 }
 </style>

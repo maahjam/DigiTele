@@ -2,7 +2,7 @@
     <div>
 
         <div class="flex flex-row-revrese content">
-            <div class="chatListContent bg-pink-700 flex flex-col w-2/5 pr-2 overflow-y-auto h-screen">
+            <div class="chatListContent flex flex-col w-2/5  pb-2 overflow-y-auto h-screen">
                     <ChatListContent/>
             </div>
 
@@ -25,10 +25,4 @@ export default {
 }
 </script>
 
-<style scoped>
-/* @media only screen and (max-width: 1023px) {
-  .chatListContent {
-    width: 70%;
-  }
-} */
-</style>
+
