@@ -1,14 +1,14 @@
 <template>
     <div>
 
-        <div class="bg-pink-500 flex flex-row-revrese content">
-            <div class=" bg-indigo-400 flex flex-col-reverse w-2/5 pl-6 pr-2">
+        <div class="flex flex-row-revrese content">
+            <div class=" bg-indigo-400 flex flex-col w-2/5 pl-6 pr-2">
                 <div class="w-full">
-                    <ChatListItem/>
+                    <ChatListItem v-for="(item , i) in chatListItems" :key="i" :chatListItem="item" />
                 </div>
             </div>
 
-            <div class="w-full">
+            <div class="w-full bg-green-400 h-screen">
                
                chat page
                 
@@ -20,16 +20,41 @@
 
 <script>
 import ChatListItem from './ChatListItem'
-import Modal from './Modal'
 export default {
     data(){
         return{
-            show: false
+            show: false,
+            chatListItems: [
+             {
+              "chatId": 624,
+              "contact": {"phoneNumber": "+989121234334", "name": "Mahsa Hasani", "username": "maahj", "photoURL": "https://digikala.com/masha.jpg", "lastSeen": "null||2020-09-12T12:07:23"},
+              "lastMessage": {"id": 12389, "text": "Hello Mahsa, What's up?", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234},
+              "unreadCount": 23
+             },
+               {
+              "chatId": 624,
+              "contact": {"phoneNumber": "+989121234334", "name": "Mahsa Hasani", "username": "maahj", "photoURL": "https://digikala.com/masha.jpg", "lastSeen": "null||2020-09-12T12:07:23"},
+              "lastMessage": {"id": 12389, "text": "Hello Mahsa, What's up?", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234},
+              "unreadCount": 23
+             },
+               {
+              "chatId": 624,
+              "contact": {"phoneNumber": "+989121234334", "name": "Mahsa Hasani", "username": "maahj", "photoURL": "https://digikala.com/masha.jpg", "lastSeen": "null||2020-09-12T12:07:23"},
+              "lastMessage": {"id": 12389, "text": "Hello Mahsa, What's up?", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234},
+              "unreadCount": 23
+             },
+               {
+              "chatId": 624,
+              "contact": {"phoneNumber": "+989121234334", "name": "Mahsa Hasani", "username": "maahj", "photoURL": "https://digikala.com/masha.jpg", "lastSeen": "null||2020-09-12T12:07:23"},
+              "lastMessage": {"id": 12389, "text": "Hello Mahsa, What's up?", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234},
+              "unreadCount": 23
+             },
+         ],
+        
         }
     },
     components:{
         ChatListItem,
-        Modal
     }
 }
 </script>
