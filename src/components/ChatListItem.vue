@@ -13,14 +13,14 @@
                    <div class="w-1/2 text-sm font-medium truncate">
                             {{chatListItem.contact.name}}
                    </div>
-                   <div class="text-right text-gray-400 w-1/2 clock">{{chatListItem.lastMessage.dateTime}}</div>
+                   <div class="text-right text-gray-400 w-1/2 clock">3/;00 am</div>
                </div>
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-xs font-medium text-gray-500 pt-2 truncate">
                         {{chatListItem.lastMessage.isMine ? "You: " + chatListItem.lastMessage.text : chatListItem.lastMessage.text}}
                    </div>
                    <div class="w-1/2 text-right">
-                       <div class="bg-gray-200 text-xs badge p-1 text-white">
+                       <div class="bg-green-400 text-xs badge p-1 text-white">
                            10
                        </div>
                    </div>

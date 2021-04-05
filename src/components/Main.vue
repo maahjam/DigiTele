@@ -1,14 +1,14 @@
 <template>
-    <div id="main">
-        <ChatList/>
+    <div id="main" class="bg-gray-200">
+        <Container/>
     </div>
 </template>
 
 <script>
-import ChatList from './ChatList'
+import Container from './Container'
 export default {
     components:{
-        ChatList
+        Container
     }
 }
 </script>

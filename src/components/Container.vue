@@ -1,17 +1,20 @@
 <template>
     <div class="container mx-auto bg-red-300 h-screen">
         <Header/>
-        <ChatListContent class="pt-12"/>
+        <ChatAndChatPageContainer class="pt-12 pb-6"/>
+        <Footer/>
     </div>
 </template>
 
 <script>
 import Header from './Header'
-import ChatListContent from './ChatListContent'
+import ChatAndChatPageContainer from './ChatAndChatPageContainer'
+import Footer from './Footer'
 export default {
     components:{
         Header,
-        ChatListContent
+        ChatAndChatPageContainer,
+        Footer
     }
 }
 </script>
