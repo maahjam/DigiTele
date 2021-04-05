@@ -1,9 +1,16 @@
 <template>
     <div>
-         <div class="input-group m-auto">
-                <input value="" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name">
-                <label for="text-1542372332072">Write a message...</label>
-         </div>
+      <div class="flex flex-col pr-4 pl-4">
+          <div class="w-full bg-indigo-500">
+            <div class="input-group w-full">
+                  <input value="" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name">
+                  <label for="text-1542372332072" class="text-sm">Write a message...</label>
+          </div>
+          </div>
+          <div class="w-full mt-2 bg-purple-200">
+            <div class="bg-white text-blue-500 text-sm font-medium w-10 h-5 ml-auto hover:text-blue-700">Send</div>
+          </div>
+      </div> 
     </div>
 </template>
 
@@ -20,8 +27,6 @@ export default {
 
 .input-group {
   display: block;
-  width: 441px;
-  max-width: 100%;
   height: 82px;
   border: 0;
   background-color: #ffffff;
