@@ -1,6 +1,7 @@
 <template>
+  <router-link :to="'/ChatPageContent/' + chatListItem.chatId">
     <div>
-        
+
      <div class="bg-white flex flex-row-revrese pt-2 pb-2 hover:bg-blue-100 visited:text-purple-600">
             <div>
                 <div class="circularImage">
@@ -27,9 +28,9 @@
                </div>
             </div>
      </div>
-     
 
     </div>
+      </router-link>
 </template>
 
 <script>

@@ -7,16 +7,7 @@
             </div>
 
             <div class="w-full bg-green-400 h-screen">
-               <ChatPageContent/>
-               <!-- messageList.count == 0 : <EmptyView/> ?     
-                
-               <MessageList>
-                   //for
-                   <MessageListItem/>
-               <MessageList/>
-           
-               <InputView/> -->
-                
+                <router-view class="bg-yellow-700"></router-view>
             </div>
         </div>
         
