@@ -2,7 +2,7 @@
   <router-link :to="'/ChatPageContent/' + chatListItem.chatId">
     <div>
 
-     <div class="bg-white flex flex-row-revrese pt-2 pb-2 hover:bg-blue-100 visited:text-purple-600">
+     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 hover:bg-blue-100 visited:text-purple-600 w-full">
             <div>
                 <div class="circularImage">
                     <img class="bg-red-400 rounded-full profileImage" :src="chatListItem.contact.profileURL" alt="" >
@@ -17,7 +17,7 @@
                    <div class="text-right text-gray-400 w-1/2 clock">3/;00 am</div>
                </div>
                <div class="flex flex-row-revrese">
-                   <div class="w-1/2 text-xs font-medium text-gray-500 pt-2 truncate">
+                   <div class="w-1/2 text-xs font-medium text-gray-500 pt-2 truncate message">
                         {{chatListItem.lastMessage.isMine ? "You: " + chatListItem.lastMessage.text : chatListItem.lastMessage.text}}
                    </div>
                    <div class="w-1/2 text-right">
@@ -69,5 +69,9 @@ export default {
 }
 .clock{
     font-size: 10px;
+}
+
+.message{
+    
 }
 </style>

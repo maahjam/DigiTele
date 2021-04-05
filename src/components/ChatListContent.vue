@@ -1,13 +1,15 @@
 <template>
     <div>
-        <div class="w-full">
+        <!-- <div class="w-full"> -->
+            <Header/>
             <ChatListItem v-for="(item , i) in chatListItems" :key="i" :chatListItem="item" />
-        </div>
+        <!-- </div> -->
     </div>
 </template>
 
 <script>
 import ChatListItem from './ChatListItem'
+import Header from './Header'
 
 export default {
     data(){
@@ -110,6 +112,7 @@ export default {
     },
     components:{
         ChatListItem,
+        Header
     }
 }
 </script>

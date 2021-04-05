@@ -2,7 +2,7 @@
     <div>
 
         <div class="flex flex-row-revrese content">
-            <div class="chatListContent bg-indigo-400 flex flex-col w-2/5 pl-6 pr-2 overflow-y-auto h-screen">
+            <div class="chatListContent bg-pink-700 flex flex-col w-2/5 pr-2 overflow-y-auto h-screen">
                     <ChatListContent/>
             </div>
 

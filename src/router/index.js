@@ -14,10 +14,10 @@ export default new Router({
       component: Main
     },
     {
-        path: '/ChatPageContent/:chatId',
-        name: 'ChatPageContent',
-        component: ChatPageContent,
-        props: true
+      path: '/ChatPageContent/:chatId',
+      name: 'ChatPageContent',
+      component: ChatPageContent,
+      props: true
     },
   ]
 })

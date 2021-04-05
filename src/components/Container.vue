@@ -1,6 +1,6 @@
 <template>
-    <div class="container mx-auto bg-red-300 h-screen">
-        <Header/>
+    <div class="container mx-auto h-screen">
+        <!-- <Header/> -->
         <ChatAndChatPageContainer class="pt-12 pb-6"/>
         <Footer/>
     </div>
@@ -20,4 +20,7 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    background-color: #3a6d99;
+}
 </style>

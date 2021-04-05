@@ -3,12 +3,12 @@
       <div class="flex flex-col pr-4 pl-4">
           <div class="w-full bg-indigo-500">
             <div class="input-group w-full">
-                  <input value="" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name">
+                  <input v-model="inputValue" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name"  v-on:keyup.enter="handleSend">
                   <label for="text-1542372332072" class="text-sm">Write a message...</label>
           </div>
           </div>
           <div class="w-full mt-2 bg-purple-200">
-            <div class="bg-white text-blue-500 text-sm font-medium w-10 h-5 ml-auto hover:text-blue-700">Send</div>
+            <div class="bg-white text-blue-500 text-sm font-medium w-10 h-5 ml-auto hover:text-blue-700" @click="handleSend">Send</div>
           </div>
       </div> 
     </div>
@@ -16,7 +16,19 @@
 
 <script>
 export default {
-    
+  data() {
+    return{
+      inputValue: ''
+    }
+
+  },
+    methods: {
+    handleSend() {
+        console.log(this.inputValue)
+        this.$emit('onSend', this.inputValue)
+        this.inputValue = "" 
+    }
+  }
 }
 </script>
 
