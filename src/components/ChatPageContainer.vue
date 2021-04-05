@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="bg-white flex flex-col h-screen">
-            <div class="bg-red-300 h-full">
+            <div class="bg-red-300 h-5/6">
                 <MessageListItem/>
             </div>
-            <div class="bg-pink-400">
+            <div class="bg-pink-400 h-2/5">
                 <InputView/>
             </div>
             
