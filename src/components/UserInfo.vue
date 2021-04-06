@@ -3,7 +3,7 @@
         <div class="header text-white flex flex-row pl-6 pr-6 h-28 items-center justify-between">
 
             
-                <div class="circularImage">
+                <div class="circular-image">
                     <img class="rounded-full text-xs" src="@/assets/png/message.png" alt="Profile image">
                 </div>
 
@@ -23,7 +23,7 @@
         </div>
         
             <div class="bg-white p-6 pl-10 pb-0 h-40 flex flex-row">
-                <div class="phoneIcon mr-4">
+                <div class="phone-icon mr-4">
                         <img src="@/assets/png/phone.png" alt="phone" >
                 </div>
                 <div class="w-full  pl-10 pr-6 flex flex-col">
@@ -52,7 +52,7 @@ export default {
 .header{
   background: #3a6d99;
 }
-.circularImage{
+.circular-image{
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -61,16 +61,16 @@ export default {
   display:inline-block;
   vertical-align:middle;
 }
-.phoneIcon{
+.phone-icon{
   width: 30px;
   height: 30px;
   display:inline-block;
 }
-.phoneIcon img{
+.phone-icon img{
     min-width: 30px;
 }
 
-.circularImage img{
+.circular-image img{
   width:100%; 
   height: 100%;
   object-fit: contain;

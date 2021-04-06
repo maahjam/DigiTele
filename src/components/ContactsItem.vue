@@ -3,7 +3,7 @@
         <router-link :to="'/UserInfo'"> 
         <div class="bg-white flex flex-row-revrese p-4 hover:bg-blue-100 visited:text-purple-600">
                 <div>
-                    <div class="circularImage">
+                    <div class="circular-image">
                         <img class="rounded-full profileImage" src="" alt="" >
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.circularImage{
+.circular-image{
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -40,7 +40,7 @@ export default {
   vertical-align:middle;
 }
 
-.circularImage img{
+.circular-image img{
   width:100%;
 }
 

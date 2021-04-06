@@ -1,10 +1,10 @@
 <template>
   <router-link :to="'/ChatPage/' + chatListItem.chatId">
     <div>
-     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'notSelected'">
+     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'not-selected'">
 
             <div>
-                <div class="circularImage">
+                <div class="circular-image">
                     <img class="rounded-full text-xs" :src="chatListItem.contact.profileURL" alt="Profile image" >
                 </div>
             </div>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-.circularImage{
+.circular-image{
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -55,11 +55,11 @@ export default {
   vertical-align:middle;
 }
 
-.notSelected{
+.not-selected{
   background-color: white;
 }
 
-.notSelected:hover{
+.not-selected:hover{
   background-color: #f2f6fa;
 }
 
@@ -67,7 +67,7 @@ export default {
   background-color: #6490b1;
 }
 
-.circularImage img{
+.circular-image img{
   width:100%;
   height: 100%;
   object-fit: contain;

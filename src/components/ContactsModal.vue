@@ -3,12 +3,12 @@
         <div class="modal-vue">
             <div class="overlay" v-if="showModal">
                 <div class="modal" v-if="showModal">
-                    <div class="h-12 flex flex-row contactsHeadrer">
-                        <div class="w-full text-sm font-medium">
-                            <div class="contacts p-4">Contacts</div>
+                    <div class="h-12 flex flex-row contacts-header items-center pl-4 pr-4">
+                        <div class="w-full text-sm font-medium text-white">
+                            Contacts
                         </div>
-                        <div class="w-full text-right text-xs font-medium">
-                             <div class="close p-4" @click="handleClose">Close</div>
+                        <div class="w-full text-right text-xs font-medium text-white" @click="handleClose">
+                             Close
                         </div>
                     </div>
                     <div class="flex flex-col h-96 overflow-y-auto">
@@ -73,7 +73,7 @@ export default {
     color: #dde8f1;
 }
 
-.contactsHeadrer{
+.contacts-header{
     background-color: #3a6d99;
 }
 </style>

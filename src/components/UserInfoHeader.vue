@@ -1,10 +1,10 @@
 <template>
     <div>
 
-        <div class="bg-blue-500 fixed-header h-12 block">
+        <div class="fixed-header h-12 block">
             <div class="text-white ml-6 pt-1 w-full flex flex-row">
-                    <div class="circularImage">
-                        <img class="rounded-full text-xs" src="" alt="Profile image" >
+                    <div class="circular-image">
+                        <img class="rounded-full text-xs" src="" alt="Profile image">
                     </div>
                     <div class="w-1/2 text-sm font-bold text-gray-100 pt-2 pb-2 pl-4 truncate" @click="showModal = true">
                         Mahsa jamshidian
@@ -42,7 +42,7 @@ export default {
   top: 0;
   width:30%;
 }
-.circularImage{
+.circular-image{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -52,7 +52,7 @@ export default {
   vertical-align:middle;
 }
 
-.circularImage img{
+.circular-image img{
   width:100%; 
   height: 100%;
   object-fit: contain;

@@ -1,10 +1,10 @@
 <template>
     <div>
         
-     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'notSelected'" @click="onMessageClicked">
+     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
 
             <div>
-                <div class="circularImage">
+                <div class="circular-image">
                     <img class="rounded-full text-xs" src="" alt="Profile image" >
                 </div>
             </div>
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style scoped>
-.circularImage{
+.circular-image{
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -63,11 +63,11 @@ export default {
   vertical-align:middle;
 }
 
-.notSelected{
+.not-selected{
   background-color: white;
 }
 
-.notSelected:hover{
+.not-selected:hover{
   background-color: #f2f6fa;
 }
 
@@ -75,7 +75,7 @@ export default {
   background-color: #f2f6fa;
 }
 
-.circularImage img{
+.circular-image img{
   width:100%;
   height: 100%;
   object-fit: contain;
