@@ -6,7 +6,7 @@
                     <div class="circular-image">
                         <img class="rounded-full text-xs" :src="contact.photoURL" alt="Profile image">
                     </div>
-                    <div class="w-1/2 text-sm font-bold text-gray-100 pt-2 pb-2 pl-4 truncate" @click="showModal = true">
+                    <div class="w-1/2 cursor-pointer text-sm font-bold text-gray-100 pt-2 pb-2 pl-4 truncate" @click="showModal = true">
                     {{ contact.name}}
                     </div>
             </div>

@@ -1,10 +1,10 @@
 <template>
     <div>
 
-        <div class="w-full h-32 bg-indigo-300 flex flex-row items-center justify-around ">
-            <div class="w-20 h-12 bg-blue-500 hover:bg-blue-700 text-center text-white text-xs font-bold p-2 pt-4 rounded-sm" @click="onDeleteClicked">DELETE</div>
-            <div class="w-20 h-12 bg-blue-500 hover:bg-blue-700 text-center text-white text-xs font-bold p-2 pt-4 rounded-sm">REPLY</div>
-            <div class="w-20 h-12 text-blue-500 text-center text-xs font-bold p-2 pt-4 hover:bg-blue-100 rounded-sm" @click="onCancelClicked">CANCEL</div>
+        <div class="actions h-32 m-auto flex flex-row items-center justify-around">
+            <div class="w-28 h-8 color text-center text-white text-xs font-bold p-2 pt-2 rounded-sm" @click="onDeleteClicked">DELETE</div>
+            <div class="w-28 h-8 color text-center text-white text-xs font-bold p-2 pt-2 rounded-sm">REPLY</div>
+            <div class="w-24 h-8 cancel text-center text-xs font-bold p-2 pt-2 rounded-sm" @click="onCancelClicked">CANCEL</div>
         </div>
 
     </div>
@@ -22,3 +22,25 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.color{
+    background: #6490b1;
+}
+.color:hover{
+    background:  #3a6d99;
+}
+
+.actions{
+    width: 95%;
+    border-top: 1px solid #F2F2F2;
+}
+
+.cancel{
+    color: #4680b3;
+}
+
+.cancel:hover{
+    background: #f2f6fa;
+}
+</style>

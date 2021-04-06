@@ -2,16 +2,18 @@
     <div>
       <div class="flex flex-col pr-4 pl-4">
           <div class="w-full">
-            <div class="input-group w-full">
+
+             <div class="input-group w-1/2 m-auto">
                   <input v-model="inputValue" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name"  v-on:keyup.enter="handleSend">
                   <label for="text-1542372332072" class="text-sm">Write a message...</label>
-          </div>
-          </div>
-          <div class="w-full mt-2">
-            <div class="bg-white text-blue-500 text-sm font-medium w-10 h-5 ml-auto hover:text-blue-600" @click="handleSend">Send</div>
+             </div>
+
+             <div class="w-1/2 m-auto pt-4">
+                  <div class="send text-sm font-medium w-10 h-5 ml-auto" @click="handleSend">SEND</div>
+             </div>
+
           </div>
       </div> 
-      
     </div>
 </template>
 
@@ -40,19 +42,12 @@ export default {
 .input-group {
   display: block;
   height: 82px;
-    border-bottom: 2px solid  #6490b1;
-
+  border-bottom: 2px solid #499dd9;
   background-color: #ffffff;
-  box-shadow: 0 17px 40px 0 rgba(75, 128, 182, 0.07);
   position: relative;
   font-size: 17px;
   color: #a7b4c1;
-  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out,
-    box-shadow 0.1s ease-in-out;
-}
-
-.input-group:hover {
-  box-shadow: 0 14px 44px 0 rgba(0, 0, 0, 0.077);
+  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
 .input-group input {
@@ -118,4 +113,11 @@ export default {
   color: #e0e0e0;
 }
 
+.send{
+  color: #499dd9;
+}
+
+.send:hover{
+  color: #5580a3;
+}
 </style>

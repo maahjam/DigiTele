@@ -1,7 +1,7 @@
 <template>
     <div>
         
-     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
+     <div id="show-reply" class="bg-white cursor-pointer messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
 
             <div>
                 <div class="circular-image">

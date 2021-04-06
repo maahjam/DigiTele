@@ -6,7 +6,7 @@
                 <MessageListItem v-for="(item , i) in messages" :key="i" :contact="contact" :message="item" :selectedMessageId="selectedMessageId" @onMessageClicked="onMessageClicked"/>
                  
             </div>
-            <div class="h-2/6">
+            <div class="h-2/6 ">
                 <InputView v-if="selectedMessageId == null" @onSend="handleSend1"/>
                 <ActionsView v-else @onCancelClicked="onCancelClicked" @onDeleteClicked="onDeleteClicked"/>
                 <!-- <ReplyView/> -->

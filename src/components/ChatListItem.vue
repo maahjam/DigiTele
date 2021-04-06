@@ -7,7 +7,7 @@
                   <img class="text-xs" :src="chat.contact.photoURL" alt="Profile image" >
             </div>
             
-            <div class="w-9/12 flex-shrink details bg-red-500">
+            <div class="w-10/12 flex-shrink details bg-red-500">
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-sm font-medium truncate">
                             {{chat.contact.name}}
