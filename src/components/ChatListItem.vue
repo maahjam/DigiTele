@@ -5,7 +5,7 @@
 
             <div>
                 <div class="circularImage">
-                    <img class="bg-red-400 rounded-full profileImage" :src="chatListItem.contact.profileURL" alt="" >
+                    <img class="rounded-full text-xs" :src="chatListItem.contact.profileURL" alt="Profile image" >
                 </div>
             </div>
 
@@ -69,6 +69,8 @@ export default {
 
 .circularImage img{
   width:100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .badge{

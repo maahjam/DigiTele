@@ -58,7 +58,7 @@ export default {
 
 .modal-vue .modal {
   position: relative;
-  width: 30%;
+  width: 400px;
   z-index: 9999;
   margin: 0 auto;
   background-color: #fff;

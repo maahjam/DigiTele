@@ -4,7 +4,7 @@
         <div class="bg-blue-500 fixed-header h-12 block">
             <div class="text-white ml-6 pt-1 w-full flex flex-row">
                     <div class="circularImage">
-                        <img class="bg-red-400 rounded-full profileImage" src="" alt="" >
+                        <img class="rounded-full text-xs" src="" alt="Profile image" >
                     </div>
                     <div class="w-1/2 text-sm font-bold text-gray-100 pt-2 pb-2 pl-4 truncate" @click="showModal = true">
                         Mahsa jamshidian
@@ -53,7 +53,9 @@ export default {
 }
 
 .circularImage img{
-  width:100%;
+  width:100%; 
+  height: 100%;
+  object-fit: contain;
 }
 </style>
 

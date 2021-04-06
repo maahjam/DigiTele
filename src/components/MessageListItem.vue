@@ -3,17 +3,11 @@
         
      <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'notSelected'" @click="onMessageClicked">
 
-            <!-- <div class="w-1/5">
-                <div class="rounded-full w-5 h-5 bg-blue-400 ml-auto mr-auto mt-4">
-                </div>
-            </div> -->
-
             <div>
                 <div class="circularImage">
-                    <img class="bg-red-400 rounded-full" src="" alt="" >
+                    <img class="rounded-full text-xs" src="" alt="Profile image" >
                 </div>
             </div>
-
 
             <div class="w-full pl-4 pr-10">
                <div class="flex flex-row-revrese">
@@ -83,19 +77,12 @@ export default {
 
 .circularImage img{
   width:100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.badge{
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  overflow: hidden;
-  display:inline-block;
-  vertical-align:middle;
-}
 .clock{
     font-size: 10px;
 }
-
 
 </style>

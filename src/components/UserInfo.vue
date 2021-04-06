@@ -1,26 +1,24 @@
 <template>
     <div>
-        <div class="header text-white flex flex-row pl-6 h-28">
+        <div class="header text-white flex flex-row pl-6 pr-6 h-28 items-center justify-between">
 
-            <div class="pt-4">
+            
                 <div class="circularImage">
-                    <img class="bg-red-400 rounded-full" src="" alt="" >
+                    <img class="rounded-full text-xs" src="@/assets/png/message.png" alt="Profile image">
                 </div>
-            </div>
 
-            <div class=" w-full pl-6 pr-10 pt-6">
-               <div class="flex flex-col">
-                   <div class="text-sm font-medium truncate">
-                        dfsd
-                   </div>
-                   <div class="text-left text-xs truncate pb-4 text-gray-400">
-                       last seen
-                   </div>
-                   <div class="text-center text-sm truncate text-white rounded-sm w-20 h-5 bg-gray-300 hover:bg-blue-600">
-                       message
-                   </div>
-               </div>
-            </div>
+                <div class="w-7/12 pl-3 pr-6 pt-6 ">
+                    <p class="text-sm font-medium truncate">
+                            dfsd
+                    </p>
+                    <p class="text-left text-xs truncate pb-4 text-gray-400">
+                        last seen
+                    </p>
+                </div>
+
+                <div class="text-center text-sm truncate text-white rounded-full pt-4 w-16 h-16 mt-28 bg-gray-300 hover:bg-blue-600">
+                        <img src="@/assets/png/message.png" class="w-8 h-8 m-auto" alt="Message">
+                </div>
 
         </div>
         
@@ -73,6 +71,8 @@ export default {
 }
 
 .circularImage img{
-  width:100%;
+  width:100%; 
+  height: 100%;
+  object-fit: contain;
 }
 </style>

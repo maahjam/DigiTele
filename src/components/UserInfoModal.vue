@@ -5,7 +5,7 @@
                 <div class="modal" v-if="showModal">
                     <div class="h-12 flex flex-row contactsHeadrer">
                         <div class="w-full text-sm font-medium">
-                            <div class="contacts p-4 pl-6">ContactInfo</div>
+                            <div class="contacts p-4 pl-6">Contact info</div>
                         </div>
                         <div class="w-full text-right text-xs font-medium">
                              <div class="close p-4" @click="handleClose">Close</div>
@@ -52,7 +52,7 @@ export default {
 
 .modal-vue .modal {
   position: relative;
-  width: 30%;
+  width: 500px;
   z-index: 9999;
   margin: 0 auto;
   background-color: #fff;
