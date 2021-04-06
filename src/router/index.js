@@ -15,7 +15,7 @@ export default new Router({
       component: NoSelectedChat
     },
     {
-      path: '/ChatPage/:chatId',
+      path: '/ChatPage/:username',
       name: 'ChatPageContent',
       component: ChatPageContent,
       props: true

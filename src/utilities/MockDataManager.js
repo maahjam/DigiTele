@@ -36,30 +36,34 @@ class MockDataManager {
         contact.lastSeen = faker.random.arrayElement(lastSeens);
         this._contacts.push(contact);
       }
-      // console.log(this._contacts);
+      console.log(this._contacts);
     };
 
     _generateChatsData = () => {
       for (let i = 0; i < 15; i++) {
         const chat = {};
-        chat.contact = faker.random.arrayElement(this._contacts);
+        chat.contact = this._contacts[this._contacts.length - 1 - i];
         chat.messages = [];
         for (let j = 0; j < 20; j++) {
           const message = {};
           message.id = (this._idPrefix + j).toString();
           message.text = faker.lorem.lines(Math.floor(Math.random() * 3) + 1);
           message.isMine = faker.random.arrayElement([true, false]);
-          message.dataTime = faker.date.recent(90).toISOString();
+          message.dateTime = faker.date.recent(90).toISOString();
           message.replyMessage = null;
           chat.messages.push(message);
         }
-        chat.messages.sort(function(a,b){return new Date(b.dataTime) - new Date(a.dataTime);});
+        chat.messages.sort(function(a,b){return new Date(b.dateTime) - new Date(a.dateTime);});
         chat.messages[18].replyMessage = chat.messages[12];
         chat.messages[15].replyMessage = chat.messages[9];
         chat.unreadMessageCount = Math.floor(Math.random() * (chat.messages.length + 1));
         this._chats.push(chat);
       }
       // console.log(this._chats);
+    };
+
+    getChats = () => {
+      return this._chats;
     };
 
 }
