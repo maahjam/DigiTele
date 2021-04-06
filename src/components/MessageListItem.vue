@@ -1,7 +1,7 @@
 <template>
     <div>
         
-     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-4 pr-4 hover:bg-white-100" @click="showReply()">
+     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-4 pr-4" @click="showReply()">
 
             <!-- <div class="w-1/5">
                 <div class="rounded-full w-5 h-5 bg-blue-400 ml-auto mr-auto mt-4">
@@ -18,10 +18,11 @@
             <div class="w-full pl-4 pr-10">
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-sm font-medium truncate">
-                {{message.id}}
+                       {{message.id}}
                    </div>
                    <div class="text-right text-gray-400 w-1/2 clock">3/;00 am</div>
                </div>
+
                <div class="flex flex-row-revrese">
                    <div class="w-full text-xs font-medium text-gray-500 pt-2">
                        {{message.text}}
@@ -29,8 +30,6 @@
                </div>
             </div>
      </div>
-     
-
     </div>
 </template>
 
@@ -44,8 +43,10 @@ export default {
     props:{
         message:{
             type: Object
-        }
-        
+        },
+        isShow:{
+            type: Boolean
+        }  
     },
     methods:{
         showReply(){
@@ -55,7 +56,8 @@ export default {
                 } else {
                     element.style.background = "white";
                 }
-        }
+        },
+        
     }
     
 }
@@ -87,5 +89,6 @@ export default {
 .clock{
     font-size: 10px;
 }
+
 
 </style>

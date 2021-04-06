@@ -11,6 +11,7 @@
             <div class="bg-white text-blue-500 text-sm font-medium w-10 h-5 ml-auto hover:text-blue-700" @click="handleSend">Send</div>
           </div>
       </div> 
+      
     </div>
 </template>
 

@@ -1,13 +1,14 @@
 <template>
     <div>
         <div class="bg-white flex flex-col h-screen">
-            <div class="bg-red-300 h-5/6 overflow-y-auto">
+            <div class="bg-red-700 h-5/6 overflow-y-auto">
                 <UserInfoHeader/>
                 <MessageListItem v-for="(item , i) in messages" :key="i" :message="item" />
-                 <!-- <ActionsView/> -->
+                 
             </div>
             <div class="bg-pink-400 h-2/5">
                 <InputView @onSend="handleSend1"/>
+                <!-- <ActionsView/> -->
             </div>
             
         </div>
@@ -19,6 +20,7 @@ import InputView from './InputView'
 import MessageListItem from './MessageListItem'
 import ActionsView from './ActionsView'
 import UserInfoHeader from './UserInfoHeader'
+
 export default {
     data(){
         return{
@@ -42,7 +44,7 @@ export default {
     },
 
      watch: { 
-      	chatId: function(newVal, oldVal) { // watch it
+      	chatId: function(newVal, oldVal) { 
           console.log('Prop changed: ', newVal, ' | was: ', oldVal)
         }
     },

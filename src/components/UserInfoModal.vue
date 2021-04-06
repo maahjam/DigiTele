@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="modal-vue">
-            <div class="overlay" v-if="showModal">
+           <div class="overlay" v-if="showModal">
                 <div class="modal" v-if="showModal">
                     <div class="h-12 flex flex-row contactsHeadrer">
                         <div class="w-full text-sm font-medium">
-                            <div class="contacts p-4">Contacts</div>
+                            <div class="contacts p-4 pl-6">ContactInfo</div>
                         </div>
                         <div class="w-full text-right text-xs font-medium">
                              <div class="close p-4" @click="handleClose">Close</div>
                         </div>
                     </div>
-                    <ContactsItem/>
+                    <UserInfo/>
                </div>
             </div>            
         </div>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import ContactsItem from './ContactsItem'
 import UserInfo from './UserInfo'
 
 export default {
@@ -31,10 +30,10 @@ export default {
     props:{
         showModal:{
             type: Boolean,
+            default: false
         }
     },
     components:{
-        ContactsItem,
         UserInfo
     }
 }
