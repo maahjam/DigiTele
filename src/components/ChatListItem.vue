@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/ChatPageContent/' + chatListItem.chatId">
+  <router-link :to="'/ChatPage/' + chatListItem.chatId">
     <div>
 
      <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 hover:bg-blue-100 visited:text-purple-600 w-full">
@@ -21,7 +21,7 @@
                         {{chatListItem.lastMessage.isMine ? "You: " + chatListItem.lastMessage.text : chatListItem.lastMessage.text}}
                    </div>
                    <div class="w-1/2 text-right">
-                       <div class="bg-green-400 text-xs badge p-1 text-white">
+                       <div class="bg-green-400 text-xs text-center pt-1 badge text-white">
                            10
                        </div>
                    </div>

@@ -1,11 +1,7 @@
 <template>
     <div>
-
-        <div id="app" class="modal-vue">
-              
-            <!-- overlay -->
-            <div class="overlay" v-if="showModal" @click="handleClose">
-
+        <div class="modal-vue">
+            <div class="overlay" v-if="showModal">
                 <div class="modal" v-if="showModal">
                     <div class="h-12 flex flex-row contactsHeadrer">
                         <div class="w-full text-sm font-medium">
@@ -15,18 +11,19 @@
                              <div class="close p-4" @click="handleClose">Close</div>
                         </div>
                     </div>
-                    <ContactsItem/>
+                    <!-- <ContactsItem/> -->
+                    <UserInfo/>
+
                </div>
-
             </div>            
-            
         </div>
-
     </div>
 </template>
 
 <script>
 import ContactsItem from './ContactsItem'
+import UserInfo from './UserInfo'
+
 export default {
     methods: {
     handleClose() {
@@ -40,7 +37,8 @@ export default {
         }
     },
     components:{
-        ContactsItem
+        ContactsItem,
+        UserInfo
     }
 }
 </script>
@@ -62,14 +60,14 @@ export default {
   z-index: 9999;
   margin: 0 auto;
   background-color: #fff;
-  top: 50%;
+  top: 20%;
 }
 
 .close{
   color: #dde8f1;
 }
 
- .contacts{
+.contacts{
     color: #dde8f1;
 }
 .contactsHeadrer{

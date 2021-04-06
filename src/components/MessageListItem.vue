@@ -10,7 +10,7 @@
 
             <div>
                 <div class="circularImage">
-                    <img class="bg-red-400 rounded-full profileImage" src="" alt="" >
+                    <img class="bg-red-400 rounded-full" src="" alt="" >
                 </div>
             </div>
 
