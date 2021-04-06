@@ -1,7 +1,7 @@
 <template>
     <div>
         
-     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-4 pr-4" @click="showReply()">
+     <div id="show-reply" class="bg-white messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'notSelected'" @click="onMessageClicked">
 
             <!-- <div class="w-1/5">
                 <div class="rounded-full w-5 h-5 bg-blue-400 ml-auto mr-auto mt-4">
@@ -44,18 +44,13 @@ export default {
         message:{
             type: Object
         },
-        isShow:{
-            type: Boolean
-        }  
+        selectedMessageId: {
+            type: String
+        },
     },
     methods:{
-        showReply(){
-          let element = document.querySelector('#show-reply')
-                if (element.style.background === "white") {
-                    element.style.background = "#f2f6fa";
-                } else {
-                    element.style.background = "white";
-                }
+        onMessageClicked(){
+              this.$emit('onMessageClicked', this.message.id.toString())
         },
         
     }
@@ -72,6 +67,18 @@ export default {
   background-color: blue;
   display:inline-block;
   vertical-align:middle;
+}
+
+.notSelected{
+  background-color: white;
+}
+
+.notSelected:hover{
+  background-color: #f2f6fa;
+}
+
+.selected{
+  background-color: #f2f6fa;
 }
 
 .circularImage img{

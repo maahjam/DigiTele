@@ -1,9 +1,8 @@
 <template>
     <div>
-        <!-- <div class="w-full"> -->
             <Header/>
-            <ChatListItem v-for="(item , i) in chatListItems" :key="i" :chatListItem="item" />
-        <!-- </div> -->
+            <ChatListItem v-for="(item , i) in chatListItems" :key="i" :chatListItem="item" />            
+
     </div>
 </template>
 

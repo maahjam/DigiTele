@@ -1,7 +1,7 @@
 <template>
   <router-link :to="'/ChatPage/' + chatListItem.chatId">
     <div>
-     <div  class = "bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'notSelected'">
+     <div  class="bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'notSelected'">
             <div>
                 <div class="circularImage">
                     <img class="bg-red-400 rounded-full profileImage" :src="chatListItem.contact.profileURL" alt="" >
@@ -20,7 +20,7 @@
                         {{chatListItem.lastMessage.isMine ? "You: " + chatListItem.lastMessage.text : chatListItem.lastMessage.text}}
                    </div>
                    <div class="w-1/2 text-right">
-                       <div class="bg-green-400 text-xs text-center pt-1 badge text-white">
+                       <div class="bg-green-400 text-center pt-1 badge text-white">
                            10
                        </div>
                    </div>
@@ -70,12 +70,13 @@ export default {
 }
 
 .badge{
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   overflow: hidden;
   display:inline-block;
   vertical-align:middle;
+  font-size: 10px;
 }
 .clock{
     font-size: 10px;
