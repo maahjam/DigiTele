@@ -1,8 +1,7 @@
 <template>
     <div>
         
-     <div id="show-reply" class="bg-white cursor-pointer messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-4" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
-
+     <div id="show-reply" class="bg-white cursor-pointer messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-24" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
             <div>
                 <div class="circular-image">
                     <img class="rounded-full text-xs" :src="message.isMine ? profile.photoURL : contact.photoURL" alt="Profile image" >
@@ -66,11 +65,10 @@ export default {
 
 <style scoped>
 .circular-image{
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: blue;
   display:inline-block;
   vertical-align:middle;
 }

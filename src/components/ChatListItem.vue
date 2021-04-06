@@ -1,13 +1,13 @@
 <template>
   <router-link :to="'/ChatPage/' + chat.contact.username">
     <div>
-     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-4 justify-between w-full" :class=" this.$route.params.contactUsername == chat.contact.username ? 'selected' : 'not-selected'">
+     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-4 pr-4 justify-between w-full" :class=" this.$route.params.contactUsername == chat.contact.username ? 'selected' : 'not-selected'">
 
             <div class="circular-image">
                   <img class="text-xs" :src="chat.contact.photoURL" alt="Profile image" >
             </div>
             
-            <div class="w-10/12 flex-shrink details bg-red-500">
+            <div class="w-10/12 flex-shrink details pl-4">
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-sm font-medium truncate">
                             {{chat.contact.name}}
@@ -16,7 +16,7 @@
                </div>
 
                <div class="flex flex-row-revrese">
-                   <div class="w-1/2 text-xs font-medium text-gray-500 pt-2 truncate message">
+                   <div class="text-xs font-medium text-gray-500 pt-2 truncate message">
                         {{chat.messages[chat.messages.length - 1].isMine ? "You: " + chat.messages[chat.messages.length - 1].text : chat.messages[chat.messages.length - 1].text}}
                    </div>
                    <div class="w-1/2 text-right" :class="chat.unreadMessageCount == 0 ? 'hide-badge' : 'show-badge'">
@@ -66,8 +66,9 @@ export default {
 
 <style scoped>
 .circular-image{
-  width: 50px;
-  height: 50px;
+  max-width: 48px;
+  min-width: 48px;
+  height: 48px;
   border-radius: 50%;
   overflow: hidden;
   background-color: blue;
@@ -90,7 +91,7 @@ export default {
 .circular-image img{
   width:100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .badge{
@@ -115,7 +116,15 @@ export default {
    font-size: 10px;
 }
 
-/* .details{
-    width: 82%;
-} */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .details {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .details {
+    width: 60%;
+  }
+}
 </style>
