@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import MockDataManager from '../utilities/MockDataManager'
+import MockDataManager from '../../utilities/MockDataManager'
 import ChatListItem from './ChatListItem'
-import Header from './Header'
+import Header from '../Header/Header'
 
 export default {
     data(){

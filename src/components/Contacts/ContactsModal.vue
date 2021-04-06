@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import MockDataManager from '../utilities/MockDataManager'
+import MockDataManager from '../../utilities/MockDataManager'
 import ContactsItem from './ContactsItem'
-import UserInfo from './UserInfo'
+import UserInfo from '../UserInfo/UserInfo'
 
 export default {
     data(){

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ChatListContent from './ChatListContent'
-import ChatPageContent from './ChatPageContent'
+import ChatListContent from '../ChatList/ChatListContent'
+import ChatPageContent from '../ChatPage/ChatPageContent'
 export default {
     components:{
         ChatListContent,

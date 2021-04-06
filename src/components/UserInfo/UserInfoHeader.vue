@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import UserInfoModal from './UserInfoModal'
+import UserInfoModal from '../UserInfo/UserInfoModal'
 export default {
   data(){
     return{

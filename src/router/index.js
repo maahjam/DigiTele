@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import NoSelectedChat from '@/components/NoSelectedChat'
-import ChatPageContent from '@/components/ChatPageContent'
-import UserInfo from '@/components/UserInfo'
+import NoSelectedChat from '@/components/NoSelectChat/NoSelectedChat'
+import ChatPageContent from '@/components/ChatPage/ChatPageContent'
+import UserInfo from '@/components/UserInfo/UserInfo'
 
 
 Vue.use(Router)

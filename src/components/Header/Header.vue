@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ContactsModal from './ContactsModal'
+import ContactsModal from '../Contacts/ContactsModal'
 export default {
     data(){
         return{

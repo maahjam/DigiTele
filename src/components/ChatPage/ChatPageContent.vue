@@ -19,10 +19,10 @@
 <script>
 import InputView from './InputView'
 import MessageListItem from './MessageListItem'
-import ActionsView from './ActionsView'
-import UserInfoHeader from './UserInfoHeader'
+import ActionsView from '../Actions/ActionsView'
+import UserInfoHeader from '../UserInfo/UserInfoHeader'
 import ReplyView from './ReplyView'
-import MockDataManager from '../utilities/MockDataManager'
+import MockDataManager from '../../utilities/MockDataManager'
 
 
 export default {

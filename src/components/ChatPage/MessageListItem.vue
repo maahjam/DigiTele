@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import MockDataManager from '../utilities/MockDataManager'
+import MockDataManager from '../../utilities/MockDataManager'
 export default {
     data(){
         return{

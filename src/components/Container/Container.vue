@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Header from './Header'
-import ChatAndChatPageContainer from './ChatAndChatPageContainer'
-import Footer from './Footer'
+import Header from '../Header/Header'
+import ChatAndChatPageContainer from '../ChatAndChatPage/ChatAndChatPageContainer'
+import Footer from '../Footer/Footer'
 export default {
     components:{
         Header,
