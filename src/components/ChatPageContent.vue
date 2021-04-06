@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="bg-white flex flex-col h-screen">
-            <div class="h-5/6 overflow-y-auto">
-                <UserInfoHeader/>
-                <MessageListItem v-for="(item , i) in messages" :key="i" :message="item" :selectedMessageId="selectedMessageId" @onMessageClicked="onMessageClicked"/>
+            <div id= "hasan" class="h-5/6 overflow-y-auto">
+                <UserInfoHeader :contact="contact"/>
+                <MessageListItem v-for="(item , i) in messages" :key="i" :contact="contact" :message="item" :selectedMessageId="selectedMessageId" @onMessageClicked="onMessageClicked"/>
                  
             </div>
             <div class="h-2/6">
@@ -22,13 +22,14 @@ import MessageListItem from './MessageListItem'
 import ActionsView from './ActionsView'
 import UserInfoHeader from './UserInfoHeader'
 import ReplyView from './ReplyView'
+import MockDataManager from '../utilities/MockDataManager'
 
 
 export default {
     data(){
         return{
             contact: Object,
-            messages: [{"id": "12389", "text": "Hello Mahsa, What's up?", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234}],
+            messages: null,
             newMessageText: String,
             msgID: 1000,
             selectedMessageId: null
@@ -42,27 +43,58 @@ export default {
         ReplyView
     },
     props:{
-        chatId:{
+        contactUsername:{
             type: String
         }
 
     },
 
      watch: { 
-      	chatId: function(newVal, oldVal) { 
+      	contactUsername: function(newVal, oldVal) { 
           console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+     this.contact = MockDataManager.getChatContact(newVal );
+            this.messages = MockDataManager.getChatMessages(newVal);
+MockDataManager.clearUnreadCount(newVal);
+
         }
+    },
+
+    mounted() {
+            this.contact = MockDataManager.getChatContact(this.$route.params.contactUsername );
+            this.messages = MockDataManager.getChatMessages(this.$route.params.contactUsername );
+              let div = document.getElementById("hasan");
+               
+div.scrollTop = div.scrollHeight - div.clientHeight;
+    },
+    updated(){
+
     },
     methods:{
         handleSend1 (newValue) {
-            this.newMessageText = newValue
-            this.msgID += 1
-            this.messages.push({"id": this.msgID.toString() , "text": this.newMessageText, "isMine": true, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234})
+              this.newMessageText = newValue;
+     MockDataManager.addChatMessage(this.contact.username,          this.newMessageText);
+
+            this.messages = MockDataManager.getChatMessages(this.contact.username);
+          
+            // this.messages.push({"id": this.msgID.toString() , "text": this.newMessageText, "isMine": true, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234})
             setTimeout(() => { 
-                this.messages.push({"id": "50505054", "text": "Message from her", "isMine": false, "dateTime": "2021-08-12T13:07:23", "isUnread": true, "replyMessageId": 234})
-                }, 2000)
+        let div = document.getElementById("hasan");
+                console.log(div.scrollHeight - div.clientHeight);
+div.scrollTop = div.scrollHeight - div.clientHeight;
+                }, 500)
                 this.newMessageText = ""
+          
+                
          },
+
+          scrollToElement() {
+    const el = this.$refs.scrollToMe;
+
+    if (el) {
+      // Use el.scrollIntoView() to instantly scroll to the element
+      el.scrollIntoView({behavior: 'smooth'});
+    }
+  },
 
         onMessageClicked (messageId) {
             if (this.selectedMessageId == messageId) {
@@ -81,9 +113,15 @@ export default {
             //  MockDataManager.deleteMessage(this.selectedMessageId);
             //  this.messages = MockDataManager.getMessages();
 
-            this.messages = this.messages.filter((item) => item.id !== this.selectedMessageId);
-            this.onCancelClicked()
+            // this.messages = this.messages.filter((item) => item.id !== this.selectedMessageId);
+            
             // this.selectedMessageId = null
+
+// console.log(this.selectedMessageId);
+                 MockDataManager.removeChatMessage(this.contact.username, this.selectedMessageId);
+
+            this.messages = MockDataManager.getChatMessages(this.contact.username);
+            this.onCancelClicked();
         }
     },
       updated(){

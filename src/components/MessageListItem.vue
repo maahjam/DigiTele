@@ -5,16 +5,16 @@
 
             <div>
                 <div class="circular-image">
-                    <img class="rounded-full text-xs" src="" alt="Profile image" >
+                    <img class="rounded-full text-xs" :src="message.isMine ? profile.photoURL : contact.photoURL" alt="Profile image" >
                 </div>
             </div>
 
             <div class="w-full pl-4 pr-10">
                <div class="flex flex-row-revrese">
                    <div class="w-1/2 text-sm font-medium truncate">
-                       {{message.id}}
+                       {{message.isMine ? profile.name : contact.name}}
                    </div>
-                   <div class="text-right text-gray-400 w-1/2 clock">3/;00 am</div>
+                   <div class="text-right text-gray-400 w-1/2 clock">{{message.dateTime.toISOString()}}</div>
                </div>
 
                <div class="flex flex-row-revrese">
@@ -28,23 +28,35 @@
 </template>
 
 <script>
+import MockDataManager from '../utilities/MockDataManager'
 export default {
     data(){
         return{
-            
+             profile: null,
         }
     },
     props:{
         message:{
             type: Object
         },
+         contact:{
+            type: Object
+        },
         selectedMessageId: {
             type: String
         },
     },
+   watch: { 
+      	selectedMessageId: function(newVal, oldVal) { 
+          
+        }
+    },
+    mounted (){
+        this.profile = MockDataManager.getProfile()
+    },
     methods:{
         onMessageClicked(){
-              this.$emit('onMessageClicked', this.message.id.toString())
+              this.$emit('onMessageClicked', this.message.id)
         },
         
     }

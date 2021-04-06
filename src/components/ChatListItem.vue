@@ -1,7 +1,7 @@
 <template>
   <router-link :to="'/ChatPage/' + chat.contact.username">
     <div>
-     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-4 justify-between w-full" :class=" this.$route.params.username == chat.contact.username ? 'selected' : 'not-selected'">
+     <div class="bg-white flex flex-row-revrese pt-2 pb-2 pl-4 justify-between w-full" :class=" this.$route.params.contactUsername == chat.contact.username ? 'selected' : 'not-selected'">
 
             <div class="circular-image">
                   <img class="text-xs" :src="chat.contact.photoURL" alt="Profile image" >
@@ -12,7 +12,7 @@
                    <div class="w-1/2 text-sm font-medium truncate">
                             {{chat.contact.name}}
                    </div>
-                   <div class="text-right text-gray-400 w-1/2 clock">{{chat.messages[chat.messages.length - 1].dateTime}}</div>
+                   <div class="text-right text-gray-400 w-1/2 clock">{{getDateTimeString(this.chat.messages[this.chat.messages.length - 1].dateTime)}}</div>
                </div>
 
                <div class="flex flex-row-revrese">
@@ -39,8 +39,28 @@ export default {
     props:{
         chat:{
             type: Object
-        },
-    }
+        }
+    },
+    methods:{
+      getDateTimeString(dateTime){
+   
+          const dateTime1 = dateTime;
+          const dateTime2 = new Date();
+          const diffTime = Math.abs(dateTime2 - dateTime1);
+          let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
+          if (diffDays == 0) {
+            return dateTime.getHours() + ":" + dateTime.getMinutes();
+          }
+          else if (diffDays > 0 && diffDays < 7){
+            const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            return weekDays[dateTime.getDay()];
+          }
+          else{
+              return (dateTime.getMonth() + 1) + "/" + dateTime.getDate()  + "/" + dateTime.getFullYear();
+          }
+      },
+    },
+
 }
 </script>
 
