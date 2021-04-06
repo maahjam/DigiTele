@@ -1,19 +1,18 @@
 <template>
     <div>
         <div class="modal-vue">
-            <div class="overlay" v-if="showModal">
+            <div class="overlay" v-if="showModal" @click="handleClose">
                 <div class="modal" v-if="showModal">
                     <div class="h-12 flex flex-row contacts-header items-center pl-4 pr-4">
                         <div class="w-full text-sm font-medium text-white">
                             Contacts
                         </div>
-                        <div class="w-full text-right text-xs font-medium text-white" @click="handleClose">
+                        <div class="w-full close text-right text-xs font-medium" @click="handleClose">
                              Close
                         </div>
                     </div>
                     <div class="flex flex-col h-96 overflow-y-auto">
                         <ContactsItem v-for="(contact , i) in contacts" :key="i" :contact="contact"/>
-                        <router-view class="view two" name="b"></router-view>
                     </div>                    
                     
                </div>
@@ -84,6 +83,15 @@ export default {
 }
 
 .contacts-header{
-    background-color: #3a6d99;
+    background-color: #5580a3;
+}
+
+.close{
+  color: #dde8f1;
+}
+
+.close:hover{
+    cursor: pointer;
+    color: white;
 }
 </style>

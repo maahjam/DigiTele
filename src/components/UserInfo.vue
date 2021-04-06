@@ -1,8 +1,6 @@
 <template>
     <div>
         <div class="header text-white flex flex-row pl-6 pr-6 h-28 items-center justify-between">
-
-            
                 <div class="circular-image">
                     <img class="rounded-full text-xs" :src="contact.photoURL" alt="Profile image">
                 </div>
@@ -17,9 +15,8 @@
                 </div>
 
                 <div class="text-center text-sm truncate text-white rounded-full pt-4 message mt-28 bg-white shadow-md hover:bg-blue-600">
-                        <img src="@/assets/png/message.png" class="w-6 h-6 m-auto" alt="Message">
+                        <img src="@/assets/png/message.png" class="w-6 h-6 m-auto" alt="Message" @click="showChatPage">
                 </div>
-
         </div>
         
             <div class="bg-white p-6 pl-10 pb-0 h-40 flex flex-row">
@@ -47,6 +44,11 @@ export default {
     props:{
         contact: {
             type: Object
+        }
+    },
+    methods:{
+        showChatPage(){
+            this.$emit('onShowChat')
         }
     }
 }

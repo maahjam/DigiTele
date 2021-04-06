@@ -11,7 +11,7 @@
                              Close
                         </div>
                     </div>
-                    <UserInfo :contact="contact"/>
+                    <UserInfo :contact="contact" @onShowChat="handleClose"/>
                </div>
             </div>            
         </div>
@@ -69,10 +69,6 @@ export default {
 .close:hover{
     cursor: pointer;
     color: white;
-}
-
-.contacts{
-    color: #dde8f1;
 }
 
 .contacts-header{
