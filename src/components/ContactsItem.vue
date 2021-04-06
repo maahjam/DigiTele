@@ -4,17 +4,17 @@
         <div class="bg-white flex flex-row-revrese p-4 hover:bg-blue-100 visited:text-purple-600">
                 <div>
                     <div class="circular-image">
-                        <img class="rounded-full profileImage" src="" alt="" >
+                        <img class="rounded-full profileImage" :src="contact.photoURL" alt="" >
                     </div>
                 </div>
 
                 <div class="w-full pl-4">
                 <div class="flex flex-col">
                     <div class="w-1/2 text-sm font-bold truncate">
-                        mahsa jamshidian
+                       {{ contact.name }}
                     </div>
                     <div class="w-1/2 text-xs font-medium text-gray-500 pt-2 truncate">
-                        last seen recently
+                        {{ contact.lastSeen}}
                     </div>
                 </div>  
                 </div>
@@ -26,6 +26,9 @@
 
 <script>
 export default {
+    props:{
+        contact: Object
+    }
 }
 </script>
 

@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col h-96 overflow-y-auto">
-                        <ContactsItem/>
+                        <ContactsItem v-for="(contact , i) in contacts" :key="i" :contact="contact"/>
                         <router-view class="view two" name="b"></router-view>
                     </div>                    
                     
@@ -24,10 +24,16 @@
 </template>
 
 <script>
+import MockDataManager from '../utilities/MockDataManager'
 import ContactsItem from './ContactsItem'
 import UserInfo from './UserInfo'
 
 export default {
+    data(){
+        return{
+            contacts: []
+        }
+    },
     methods: {
     handleClose() {
         this.$emit('onClose')
@@ -41,6 +47,10 @@ export default {
     components:{
         ContactsItem,
         UserInfo
+    },
+    mounted(){
+        this.contacts = MockDataManager.getContacts()
+        console.log(this.contacts);
     }
 }
 </script>

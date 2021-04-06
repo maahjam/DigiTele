@@ -11,7 +11,7 @@
                     </div>
             </div>
         </div>
-        <UserInfoModal :showModal="showModal" @onClose="handleClose"/>
+        <UserInfoModal :contact="contact" :showModal="showModal" @onClose="handleClose"/>
     </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
 <style scoped>
 .fixed-header{
   overflow: hidden;
-  background-color: #3a6d99;
+  background-color: #5580a3;
   position: fixed;
   top: 0;
   width:30%;

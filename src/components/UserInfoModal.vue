@@ -7,11 +7,11 @@
                         <div class="w-full text-sm font-medium text-white">
                             Contact info
                         </div>
-                        <div class="w-full text-right text-xs font-medium text-white" @click="handleClose">
+                        <div class="close w-full text-right text-xs font-medium" @click="handleClose">
                              Close
                         </div>
                     </div>
-                    <UserInfo/>
+                    <UserInfo :contact="contact"/>
                </div>
             </div>            
         </div>
@@ -31,6 +31,9 @@ export default {
         showModal:{
             type: Boolean,
             default: false
+        },
+        contact:{
+            type: Object
         }
     },
     components:{
@@ -63,10 +66,16 @@ export default {
   color: #dde8f1;
 }
 
+.close:hover{
+    cursor: pointer;
+    color: white;
+}
+
 .contacts{
     color: #dde8f1;
 }
+
 .contacts-header{
-    background-color: #3a6d99;
+    background-color: #5580a3;
 }
 </style>

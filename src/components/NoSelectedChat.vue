@@ -1,9 +1,15 @@
 <template>
-    <div class="pt-40">
-        <div class="text-gray-300 w-full text-center text-xl h-40 m-auto">
+    <div class="pt-80">
+        <div class="w-full color text-center text-xl h-40 m-auto">
             Please select a chat to start messaging
         </div>
     </div>
 </template>
+
+<style scoped>
+.color{
+    color: #999;
+}
+</style>
 
 
