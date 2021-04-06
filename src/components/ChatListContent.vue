@@ -2,7 +2,6 @@
     <div>
             <Header/>
             <ChatListItem v-for="(item , i) in chatListItems" :key="i" :chatListItem="item" />            
-
     </div>
 </template>
 

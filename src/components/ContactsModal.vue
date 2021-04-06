@@ -11,10 +11,15 @@
                              <div class="close p-4" @click="handleClose">Close</div>
                         </div>
                     </div>
-                    <ContactsItem/>
+                    <div class="flex flex-col h-96 overflow-y-auto">
+                        <ContactsItem/>
+                        <router-view class="view two" name="b"></router-view>
+                    </div>                    
+                    
                </div>
             </div>            
         </div>
+        
     </div>
 </template>
 
@@ -67,6 +72,7 @@ export default {
 .contacts{
     color: #dde8f1;
 }
+
 .contactsHeadrer{
     background-color: #3a6d99;
 }
