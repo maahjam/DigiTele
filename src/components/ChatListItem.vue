@@ -1,7 +1,7 @@
 <template>
   <router-link :to="'/ChatPage/' + chatListItem.chatId">
     <div>
-     <div  class = "bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 hover:bg-blue-100 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'notSelected'">
+     <div  class = "bg-white flex flex-row-revrese pt-2 pb-2 pl-6 pr-6 visited:text-purple-600 w-full" :class=" this.$route.params.chatId == chatListItem.chatId ? 'selected' : 'notSelected'">
             <div>
                 <div class="circularImage">
                     <img class="bg-red-400 rounded-full profileImage" :src="chatListItem.contact.profileURL" alt="" >
@@ -56,6 +56,11 @@ export default {
 .notSelected{
   background-color: white;
 }
+
+.notSelected:hover{
+  background-color: #f2f6fa;
+}
+
 .selected{
   background-color: #6490b1;
 }
