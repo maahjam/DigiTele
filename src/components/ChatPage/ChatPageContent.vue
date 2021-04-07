@@ -3,7 +3,7 @@
         <div class="bg-white flex flex-col h-screen ">
             <div id= "hasan" class="h-5/6 overflow-y-auto">
                 <UserInfoHeader :contact="contact"/>
-                <MessageListItem v-for="(item , i) in messages" :key="i" :contact="contact" :message="item" :selectedMessageId="selectedMessageId" @onMessageClicked="onMessageClicked"/>
+                <MessageListItem  v-for="(item , i) in messages" :key="i" :contact="contact" :message="item" :selectedMessageId="selectedMessageId" @onMessageClicked="onMessageClicked"/>
                  
             </div>
             <div class="h-2/6">

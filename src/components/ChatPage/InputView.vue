@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="flex flex-col pr-4 pl-4 mt-6">
+      <div class="flex flex-col pr-4 pl-4">
           <div class="w-full">
 
              <div class="input-group w-1/2 m-auto">
