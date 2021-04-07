@@ -48,7 +48,7 @@ class MockDataManager {
         for (let j = 0; j < 20; j++) {
           const message = {};
           message.id = (this._idPrefix + j).toString();
-          message.text = faker.lorem.lines(Math.floor(Math.random() * 3) + 1);
+          message.text = "Hello Mahsa, What's up?"
           message.isMine = faker.random.arrayElement([true, false]);
           const d = new Date();
           z = z - 1;
@@ -79,10 +79,15 @@ class MockDataManager {
       return this._profile;
     };
 
-    getChatContact = (contactUsername) => {
-      let c = this._chats.find(c => c.contact.username === contactUsername);
-      return c.contact;
+    getContact = (contactUsername) => {
+      let c = this._contacts.find(c => c.username === contactUsername);
+      return c;
     };
+
+    // getChatContact = (contactUsername) => {
+    //   let c = this._chats.find(c => c.contact.username === contactUsername);
+    //   return c.contact;
+    // };
 
     getChatMessages = (contactUsername) => {
       let c = this._chats.find(c => c.contact.username === contactUsername);

@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="'/ChatPage/' + contact.username">
     <div>
         <div class="bg-white contact cursor-pointer flex flex-row-revrese pl-4 pr-4 pb-3 pt-3">
                 <div>
@@ -12,20 +13,22 @@
                     <div class="w-1/2 text-sm font-bold truncate">
                        {{ contact.name }}
                     </div>
-                    <div class="w-1/2 text-xs font-medium last-seen pt-1 truncate">
+                    <div class="w-full text-xs font-medium last-seen pt-1 ">
                         {{ contact.lastSeen}}
                     </div>
                 </div>  
                 </div>
         </div>
     </div>
+  </router-link>
 </template>
 
 <script>
 export default {
     props:{
         contact: Object
-    }
+    },
+
 }
 </script>
 

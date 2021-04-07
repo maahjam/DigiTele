@@ -53,15 +53,19 @@ export default {
      watch: { 
       	contactUsername: function(newVal, oldVal) { 
           console.log('Prop changed: ', newVal, ' | was: ', oldVal)
-     this.contact = MockDataManager.getChatContact(newVal );
+ this.messages = null;
+         this.contact = MockDataManager.getContact(newVal);
             this.messages = MockDataManager.getChatMessages(newVal);
-MockDataManager.clearUnreadCount(newVal);
+        MockDataManager.clearUnreadCount(newVal);
+
+
 
         }
     },
 
     mounted() {
-            this.contact = MockDataManager.getChatContact(this.$route.params.contactUsername );
+        this.messages = null;
+            this.contact = MockDataManager.getContact(this.$route.params.contactUsername );
             this.messages = MockDataManager.getChatMessages(this.$route.params.contactUsername );
               let div = document.getElementById("hasan");
                
