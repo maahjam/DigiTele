@@ -14,14 +14,14 @@
                     </p>
                 </div>
 
-                <div class="text-center text-sm truncate text-white rounded-full pt-4 message mt-28 bg-white shadow-md hover:bg-blue-600">
-                        <img src="@/assets/png/message.png" class="w-6 h-6 m-auto" alt="Message" @click="showChatPage">
+                <div class="text-center text-sm truncate text-white rounded-full pt-4 message mt-28 bg-white shadow-md hover:bg-blue-600" @click="showChatPage">
+                        <img src="@/assets/svg/speech-bubble.svg" class="w-6 h-6 m-auto" alt="Message" @click="showChatPage">
                 </div>
         </div>
         
             <div class="bg-white p-6 pl-10 pb-0 h-40 flex flex-row">
                 <div class="phone-icon mr-4">
-                        <img src="@/assets/png/phone.png" alt="phone" >
+                        <img src="@/assets/svg/phone.svg" alt="phone" >
                 </div>
                 <div class="w-full  pl-10 pr-6 flex flex-col">
                     <div class="h-1/2">
