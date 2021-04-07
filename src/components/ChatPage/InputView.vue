@@ -18,7 +18,7 @@
           >
         </div>
 
-        <div class="w-1/2 m-auto pt-4">
+        <div class="w-1/2 m-auto pt-2">
           <div
             class="send text-sm font-medium w-10 h-5 ml-auto"
             @click="onSendClicked"
@@ -54,7 +54,7 @@ export default {
 
 .input-group {
   display: block;
-  height: 50px;
+  height: 60px;
   border-bottom: 2px solid #499dd9;
   background-color: #ffffff;
   position: relative;
@@ -70,7 +70,7 @@ export default {
   border: 0;
   background-color: rgba(255, 255, 255, 0);
   top: 0;
-  height: 50px;
+  height: 60px;
   width: 100%;
   padding: 0 53px;
   box-sizing: border-box;

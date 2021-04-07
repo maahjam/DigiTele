@@ -10,7 +10,7 @@
             alt="contacts"
           />
         </div>
-        <div class="text-white p-2">Telegram</div>
+        <div class="text-white p-2">DigiTele</div>
       </div>
     </div>
     <ContactsModal :showModal="showModal" @onClose="handleClose" />
