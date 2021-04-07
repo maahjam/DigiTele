@@ -1,37 +1,50 @@
 <template>
-    <div>
-      <div class="flex flex-col pr-4 pl-4">
-          <div class="w-full">
+  <div>
+    <div class="flex flex-col pr-4 pl-4">
+      <div class="w-full">
+        <div class="input-group w-1/2 m-auto">
+          <input
+            v-model="inputValue"
+            class="form-control"
+            type="text"
+            name="text-1542372332072"
+            id="text-1542372332072"
+            required="required"
+            placeholder="Ihr Name"
+            v-on:keyup.enter="onSendClicked"
+          />
+          <label for="text-1542372332072" class="text-sm"
+            >Write a message...</label
+          >
+        </div>
 
-             <div class="input-group w-1/2 m-auto">
-                  <input v-model="inputValue" class="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Ihr Name"  v-on:keyup.enter="handleSend">
-                  <label for="text-1542372332072" class="text-sm">Write a message...</label>
-             </div>
-
-             <div class="w-1/2 m-auto pt-4">
-                  <div class="send text-sm font-medium w-10 h-5 ml-auto" @click="handleSend">SEND</div>
-             </div>
-
+        <div class="w-1/2 m-auto pt-4">
+          <div
+            class="send text-sm font-medium w-10 h-5 ml-auto"
+            @click="onSendClicked"
+          >
+            SEND
           </div>
-      </div> 
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
-    return{
-      inputValue: ''
-    }
-
+    return {
+      inputValue: "",
+    };
   },
-    methods: {
-    handleSend() {
-        this.$emit('onSend', this.inputValue)
-        this.inputValue = "" 
-    }
-  }
-}
+  methods: {
+    onSendClicked() {
+      this.$emit("onSendClicked", this.inputValue);
+      this.inputValue = "";
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -41,13 +54,14 @@ export default {
 
 .input-group {
   display: block;
-  height: 82px;
+  height: 50px;
   border-bottom: 2px solid #499dd9;
   background-color: #ffffff;
   position: relative;
   font-size: 17px;
   color: #a7b4c1;
-  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out,
+    box-shadow 0.1s ease-in-out;
 }
 
 .input-group input {
@@ -56,7 +70,7 @@ export default {
   border: 0;
   background-color: rgba(255, 255, 255, 0);
   top: 0;
-  height: 65px;
+  height: 50px;
   width: 100%;
   padding: 0 53px;
   box-sizing: border-box;
@@ -113,11 +127,11 @@ export default {
   color: #e0e0e0;
 }
 
-.send{
+.send {
   color: #499dd9;
 }
 
-.send:hover{
+.send:hover {
   color: #5580a3;
 }
 </style>
