@@ -1,7 +1,8 @@
 <template>
     <div>
-        
+        <ReplyView v-if="message.replyMessage !== null" :message="message.replyMessage" :contact="contact"/>
      <div id="show-reply" class="bg-white cursor-pointer messageItem flex flex-row-revrese pt-2 pb-2 pl-24 pr-24" :class="selectedMessageId == message.id.toString() ? 'selected' : 'not-selected'" @click="onMessageClicked">
+           
             <div>
                 <div class="circular-image">
                     <img class="rounded-full text-xs" :src="message.isMine ? profile.photoURL : contact.photoURL" alt="Profile image" >
@@ -28,11 +29,15 @@
 
 <script>
 import MockDataManager from '../../utilities/MockDataManager'
+import ReplyView from './ReplyView'
 export default {
     data(){
         return{
              profile: MockDataManager.getProfile(),
         }
+    },
+      components:{
+        ReplyView
     },
     props:{
         message:{

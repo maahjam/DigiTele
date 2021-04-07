@@ -248,14 +248,14 @@ class MockDataManager {
       this._chats.find(c => c.contact.username === contactUsername).messages.push(message);
     };
 
-    addChatMessage = (contactUsername, txt) => {
+    addChatMessage = (contactUsername, txt, replyMsg) => {
       let x = this._chats.find(c => c.contact.username === contactUsername).messages;
       const message = {};
       message.id = (this._idPrefix + x.length).toString();
       message.text = txt
       message.isMine = true
       message.dateTime = new Date();
-      message.replyMessage = null;
+      message.replyMessage = replyMsg;
       this._chats.find(c => c.contact.username === contactUsername).messages.push(message);
       this._chats.sort((a, b) => b.messages[b.messages.length - 1].dateTime - a.messages[a.messages.length - 1].dateTime);
     };

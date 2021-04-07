@@ -7,10 +7,9 @@
                  
             </div>
             <div class="h-2/6 ">
-                <ReplyView />
+                <ReplyView v-if="replyMessage !== null" :message="replyMessage" :contact="contact" @onCloseReplyClicked="onCloseReplyClicked" :showClose="true"/>
                 <InputView v-if="selectedMessageId == null" @onSend="handleSend1"/>
                 <ActionsView v-else @onCancelClicked="onCancelClicked" @onDeleteClicked="onDeleteClicked" @onReplyClicked="onReplyClicked"/>
-                <!-- <ReplyView/> -->
             </div>
             
         </div>
@@ -74,7 +73,7 @@ div.scrollTop = div.scrollHeight - div.clientHeight;
     methods:{
         handleSend1 (newValue) {
               this.newMessageText = newValue;
-     MockDataManager.addChatMessage(this.contact.username,          this.newMessageText);
+     MockDataManager.addChatMessage(this.contact.username,this.newMessageText, this.replyMessage);
 
             this.messages = MockDataManager.getChatMessages(this.contact.username);
           
@@ -84,8 +83,8 @@ div.scrollTop = div.scrollHeight - div.clientHeight;
                 console.log(div.scrollHeight - div.clientHeight);
 div.scrollTop = div.scrollHeight - div.clientHeight;
                 }, 500)
-                this.newMessageText = ""
-          
+                this.newMessageText = "";
+          this.replyMessage = null;
                 
          },
 
@@ -127,7 +126,24 @@ div.scrollTop = div.scrollHeight - div.clientHeight;
         },
 
         onReplyClicked () {
-            this.replyMessage = this.messages.find(m => m.id === this.selectedMessageId);
+            const m = this.messages.find(m => m.id === this.selectedMessageId);
+            const date1 = m.dateTime;
+            const date2 = new Date();
+            const diffTime = Math.abs(date2 - date1);
+                        // console.log(diffTime)
+            const diffSec = Math.ceil(diffTime / (1000)); 
+            // console.log(diffSec)
+            if (diffSec > 2){
+             this.replyMessage = m
+        }
+            this.onCancelClicked();
+
+        },
+
+            onCloseReplyClicked () {
+           this.replyMessage = null;
+            this.onCancelClicked();
+
         },
     },
       updated(){
