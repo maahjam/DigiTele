@@ -20,6 +20,9 @@ export default {
     components:{
         ChatListContent,
         ChatPageContent
+    },
+    mounted(){
+           this.$router.push("/");
     }
 }
 </script>
