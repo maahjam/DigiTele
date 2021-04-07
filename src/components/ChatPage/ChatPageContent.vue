@@ -7,8 +7,9 @@
                  
             </div>
             <div class="h-2/6 ">
+                <ReplyView />
                 <InputView v-if="selectedMessageId == null" @onSend="handleSend1"/>
-                <ActionsView v-else @onCancelClicked="onCancelClicked" @onDeleteClicked="onDeleteClicked"/>
+                <ActionsView v-else @onCancelClicked="onCancelClicked" @onDeleteClicked="onDeleteClicked" @onReplyClicked="onReplyClicked"/>
                 <!-- <ReplyView/> -->
             </div>
             
@@ -32,7 +33,8 @@ export default {
             messages: null,
             newMessageText: String,
             msgID: 1000,
-            selectedMessageId: null
+            selectedMessageId: null,
+            replyMessage: null,
         }
     },
     components:{
@@ -122,7 +124,11 @@ div.scrollTop = div.scrollHeight - div.clientHeight;
 
             this.messages = MockDataManager.getChatMessages(this.contact.username);
             this.onCancelClicked();
-        }
+        },
+
+        onReplyClicked () {
+            this.replyMessage = this.messages.find(m => m.id === this.selectedMessageId);
+        },
     },
       updated(){
     },

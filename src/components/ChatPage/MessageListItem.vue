@@ -13,7 +13,7 @@
                    <div class="w-1/2 text-sm font-medium truncate">
                        {{message.isMine ? profile.name : contact.name}}
                    </div>
-                   <div class="text-right text-gray-400 w-1/2 clock">{{message.dateTime.toISOString()}}</div>
+                   <div class="text-right text-gray-400 w-1/2 clock">{{getDateTimeString(message.dateTime)}}</div>
                </div>
 
                <div class="flex flex-row-revrese">
@@ -31,7 +31,7 @@ import MockDataManager from '../../utilities/MockDataManager'
 export default {
     data(){
         return{
-             profile: null,
+             profile: MockDataManager.getProfile(),
         }
     },
     props:{
@@ -50,13 +50,17 @@ export default {
           
         }
     },
-    mounted (){
-        this.profile = MockDataManager.getProfile()
-    },
     methods:{
         onMessageClicked(){
               this.$emit('onMessageClicked', this.message.id)
         },
+
+        getDateTimeString(dateTime){
+   
+  
+              return (dateTime.getMonth() + 1) + "/" + dateTime.getDate()  + "/" + dateTime.getFullYear().toString().substr(-2) + " " 
+          + (dateTime.getHours() > 12 ? dateTime.getHours() - 12 : dateTime.getHours() ) + ":" + (dateTime.getMinutes() < 10 ? "0" + dateTime.getMinutes() : dateTime.getMinutes() ) + ":" + (dateTime.getSeconds() < 10 ? "0" + dateTime.getSeconds() : dateTime.getSeconds() ) + " " + (dateTime.getHours() < 12 ? "AM" : "PM");
+      },
         
     }
     

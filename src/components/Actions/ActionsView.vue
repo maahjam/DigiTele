@@ -3,7 +3,7 @@
 
         <div class="actions h-32 m-auto flex flex-row items-center justify-around">
             <div class="w-28 h-8 color text-center text-white text-xs font-bold p-2 pt-2 rounded-sm" @click="onDeleteClicked">DELETE</div>
-            <div class="w-28 h-8 color text-center text-white text-xs font-bold p-2 pt-2 rounded-sm">REPLY</div>
+            <div class="w-28 h-8 color text-center text-white text-xs font-bold p-2 pt-2 rounded-sm" @click="onReplyClicked">REPLY</div>
             <div class="w-24 h-8 cancel text-center text-xs font-bold p-2 pt-2 rounded-sm" @click="onCancelClicked">CANCEL</div>
         </div>
 
@@ -18,6 +18,9 @@ export default {
         },
         onDeleteClicked(){
               this.$emit('onDeleteClicked')
+        },
+        onReplyClicked(){
+            this.$emit('onReplyClicked')
         }
     }
 }

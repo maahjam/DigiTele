@@ -48,15 +48,16 @@ export default {
           const dateTime2 = new Date();
           const diffTime = Math.abs(dateTime2 - dateTime1);
           let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
+
           if (diffDays == 0) {
-            return dateTime.getHours() + ":" + dateTime.getMinutes();
+            return (dateTime.getHours() > 12 ? dateTime.getHours() - 12 : dateTime.getHours() ) + ":" + (dateTime.getMinutes() < 10 ? "0" + dateTime.getMinutes() : dateTime.getMinutes() ) + " " + (dateTime.getHours() < 12 ? "AM" : "PM");
           }
           else if (diffDays > 0 && diffDays < 7){
             const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             return weekDays[dateTime.getDay()];
           }
           else{
-              return (dateTime.getMonth() + 1) + "/" + dateTime.getDate()  + "/" + dateTime.getFullYear();
+              return (dateTime.getMonth() + 1) + "/" + dateTime.getDate()  + "/" + dateTime.getFullYear().toString().substr(-2);
           }
       },
     },

@@ -49,7 +49,7 @@ export default {
     },
     mounted(){
         this.contacts = MockDataManager.getContacts()
-        console.log(this.contacts);
+        // console.log(this.contacts);
     }
 }
 </script>

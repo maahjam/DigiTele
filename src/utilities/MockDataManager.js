@@ -183,6 +183,7 @@ class MockDataManager {
     };
 
     _generateChatsData = () => {
+      let z = 15 * 20;
       for (let i = 0; i < 15; i++) {
         const chat = {};
         chat.contact = this._contacts[this._contacts.length - 1 - i];
@@ -192,16 +193,19 @@ class MockDataManager {
           message.id = (this._idPrefix + j).toString();
           message.text = faker.lorem.lines(Math.floor(Math.random() * 3) + 1);
           message.isMine = faker.random.arrayElement([true, false]);
-          message.dateTime = faker.date.recent(4);
+          const d = new Date();
+          z = z - 1;
+          d.setHours(d.getHours() - (z * 2));
+          message.dateTime = d;
           message.replyMessage = null;
           chat.messages.push(message);
         }
-        chat.messages.sort(function(a,b){return new Date(b.dateTime) - new Date(a.dateTime);});
         chat.messages[18].replyMessage = chat.messages[12];
         chat.messages[15].replyMessage = chat.messages[9];
         chat.unreadMessageCount = Math.floor(Math.random() * (chat.messages.length + 1));
         this._chats.push(chat);
       }
+      this._chats.reverse();
       // console.log(this._chats);
     };
 
@@ -253,6 +257,7 @@ class MockDataManager {
       message.dateTime = new Date();
       message.replyMessage = null;
       this._chats.find(c => c.contact.username === contactUsername).messages.push(message);
+      this._chats.sort((a, b) => b.messages[b.messages.length - 1].dateTime - a.messages[a.messages.length - 1].dateTime);
     };
 
     removeChatMessage = (contactUsername, messageId) => {

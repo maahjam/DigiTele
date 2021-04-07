@@ -14,7 +14,11 @@
 
 <script>
 export default {
-    
+      props:{
+        message:{
+            type: Object
+        },
+    },
 }
 </script>
 
