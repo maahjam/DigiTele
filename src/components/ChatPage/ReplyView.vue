@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex flex-row w-1/2 m-auto justify-between  p-2 items-center h-16">
+        <div class="flex flex-row  m-auto justify-between p-2 items-center h-16">
             <div class="h-8 blue-line"></div>
             <div class=" w-10/12">
             <div class="text-sm font-medium name pb-1">{{message.isMine ? profile.name : contact.name}}</div>
