@@ -35,7 +35,7 @@
 
     <div class="bg-white p-6 pl-10 pb-0 h-40 flex flex-row">
       <div class="phone-icon mr-4">
-        <img src="@/assets/svg/phone.svg" alt="phone" />
+        <img src="@/assets/png/phone.png" alt="phone" />
       </div>
       <div class="w-full pl-10 pr-6 flex flex-col">
         <div class="h-1/2">
